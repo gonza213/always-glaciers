@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.precio-superior-cont {
+  background: rgb(255, 255, 255) none repeat scroll 0% 0% !important;
+  border-radius: 4px !important;
+  padding: 20px 32px 16px !important;
+  width: 225px !important;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 16px 40px !important;
+}
+.precio-superior-cont p {
+  padding: 22px 0 22px;
+}
+.precio-superior-cont p span {
+  font-size: 11px !important;
+}
+.mod-precio-1-cont {
+  height: 61px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mod-precio-1-cont span {
+  font-size: 28px;
+  white-space: nowrap;
+  display: inline-block;
+}
+.mod-precio-1-cont del {
+  color: rgba(136, 136, 136, 0.9);
+  text-decoration: none;
+  position: relative;
+}
+.mod-precio-1-cont del:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  border-top: 1.5px solid rgba(136, 136, 136, 0.9);
+  height: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-7deg);
+}
+.mod-precio-2-cont {
+  display: inline-block;
+}
+.mod-precio-2-cont div {
+  background-color: #0077b9;
+  border-radius: 0px 0px 4px 4px;
+  padding: 22px 0 22px;
+  margin: 0 -81px -18px;
+  width: 225px;
+}
+.al-q-res-nro {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+.al-q-res-txt {
+  display: inline-block;
+  margin-left: 0.25em;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: none;
+  text-align: left;
+  color: #fff;
+  line-height: 11px;
+}
+
+@media only screen and (min-device-width: 880px) {
+  .precio-superior {
+    margin-top: -137px;
+  }
+}
+@media only screen and (max-device-width: 879px) {
+  .precio-superior {
+    margin-top: 0px;
+  }
+}
+@media only screen and (min-device-width: 880px) {
+  .col-l-fich {
+    width: 75%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media only screen and (min-device-width: 710px) and (max-device-width: 879px) {
+  .col-l-fich {
+    width: 65%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media only screen and (max-device-width: 709px) {
+  .col-l-fich {
+    width: 100%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media only screen and (min-device-width: 880px) {
+  .col-r-fich {
+    width: 25%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media only screen and (min-device-width: 710px) and (max-device-width: 879px) {
+  .col-r-fich {
+    width: 35%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media only screen and (max-device-width: 709px) {
+  .col-r-fich {
+    width: 100%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}

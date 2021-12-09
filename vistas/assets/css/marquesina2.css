@@ -1,0 +1,220 @@
+.contenttitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  line-height: 40px;
+  font-family: "Muli";
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  color: #ffffff;
+  height: 170px;
+  overflow: hidden;
+}
+
+.contenttop {
+  position: absolute;
+  top: calc(50% - 70px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  line-height: 40px;
+  font-family: "Muli";
+  color: #ffffff;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  height: 160px;
+  overflow: hidden;
+}
+
+.contentbtn {
+  position: absolute;
+  top: calc(50% + 50px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  line-height: 40px;
+  font-family: "Muli";
+  color: #ffffff;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  height: 160px;
+  overflow: hidden;
+  text-align: center;
+}
+@media only screen and (max-device-width: 375px) {
+  .contentbtn {
+    position: absolute;
+    top: calc(50% + 50px);
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    line-height: 20px;
+    font-family: "Muli";
+    color: #ffffff;
+    font-weight: 100;
+    -webkit-font-smoothing: antialiased;
+    height: 160px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .visibletitle:before {
+    content: "[";
+    left: 0;
+    line-height: 45px;
+  }
+  .visibletitle:after {
+    content: "]";
+    position: absolute;
+    right: 0;
+    line-height: 45px;
+  }
+  .visibletitle:after,
+  .visibletitle:before {
+    position: absolute;
+    top: 0;
+    color: #00c0ef;
+    font-size: 45px;
+    -webkit-animation: 2s linear 0s normal none infinite opacity;
+    animation: 2s linear 0s normal none infinite opacity;
+  }
+}
+
+.visibletitle {
+  font-weight: 600;
+  overflow: hidden;
+  height: 35px;
+  padding: 0 40px;
+}
+.visibletitle:before {
+  content: "[";
+  left: 0;
+  line-height: 45px;
+}
+.visibletitle:after {
+  content: "]";
+  position: absolute;
+  right: 0;
+  line-height: 45px;
+}
+.visibletitle:after,
+.visibletitle:before {
+  position: absolute;
+  top: 0;
+  color: #00c0ef;
+  font-size: 45px;
+  -webkit-animation: 2s linear 0s normal none infinite opacity;
+  animation: 2s linear 0s normal none infinite opacity;
+}
+
+.ptitle {
+  display: inline;
+  float: left;
+  margin: 0;
+}
+
+.ultitle {
+  margin-top: 0;
+  padding-left: 0px;
+  text-align: center;
+  list-style: none;
+  -webkit-animation: 7s linear 0s normal none infinite change;
+  animation: 7s linear 0s normal none infinite change;
+}
+
+.ullititle {
+  line-height: 42px;
+  margin: -4px;
+}
+
+@-webkit-keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes change {
+  0%,
+  12%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  17%,
+  29% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  34%,
+  46% {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  51%,
+  63% {
+    -webkit-transform: translateY(-75%);
+    transform: translateY(-75%);
+  }
+  68%,
+  80% {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  85%,
+  97% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+}
+@keyframes change {
+  0%,
+  12%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  17%,
+  29% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  34%,
+  46% {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  51%,
+  63% {
+    -webkit-transform: translateY(-75%);
+    transform: translateY(-75%);
+  }
+  68%,
+  80% {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  85%,
+  97% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+}

@@ -1,0 +1,252 @@
+.red {
+    border: 1px solid red !important;
+}
+#map-canvas {
+    height: 75%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    padding-bottom: 42%;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom:20px;
+}
+.div-widget{display:block;overflow:hidden;width:100%;}
+.TA_socialButtonBubbles{float:none!important;}
+.socialWidgetContainer, .socialWidget, .socialWidgetCore{float:left!important;}
+.disabled:hover, .disabled label:hover{cursor: not-allowed;}
+.disabled, .disabled label{cursor: not-allowed;}
+
+.loading-overlay-ajax{
+    position:fixed;z-index:-1;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,.9);opacity:0;filter:alpha(opacity=0);
+}
+.loading-overlay-ajax.active{
+    opacity:0.7;filter:alpha(opacity=70);z-index:9999;
+}
+.loading-overlay-ajax div{
+    position:absolute;top:50%;left:50%;color:#444;font-size:24px;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);
+}
+.loading-overlay-ajax img{
+    -webkit-animation:flash 2s infinite;animation:flash 2s infinite;
+}
+
+.modulo-titinerario-resp{display:none!important;}
+
+.input-datepicker-col{border:none;margin-right:5px;width:100%;padding:0px;overflow:hidden;max-width: 230px;}
+.box-inputs #datepicker2, .box-inputs #datepicker, .box-inputs #datepicker3, .box-inputs #datepicker4{width:94%!Important;background:#f3f3f3!important; padding:4px; margin:0px;cursor: pointer;}
+.box-inputs input::-webkit-input-placeholder {font-size:12px!important;color:#333!important;font-weight:700;}
+.box-inputs input:-moz-placeholder {font-size:12px!important;color:#333!important;font-weight:700;}
+.box-inputs input::-moz-placeholder {font-size:12px!important;color:#333!important;font-weight:700;}
+.box-inputs input:-ms-input-placeholder {font-size:12px!important;color:#333!important;font-weight:700;}
+.box-inputs{padding:2px;width:100%;border:1px solid #e2e2e2;margin-bottom:10px;background:#f3f3f3!important;color:#333!important;font-weight:700;height: 34px;cursor: pointer;}
+
+.input-datepicker::-webkit-input-placeholder {color:#353535!important;}
+.input-datepicker:-moz-placeholder {color:#353535!important;}
+.input-datepicker::-moz-placeholder {color:#353535!important;}
+.input-datepicker:-ms-input-placeholder {color:#353535!important;}
+
+@media only screen and (min-device-width: 320px){
+    .box-inputs #datepicker2, .box-inputs #datepicker, .box-inputs #datepicker3, .box-inputs #datepicker4{width:88%!Important;}
+    .sin-padd{padding:0!important;}
+}
+
+
+@media only screen and (min-device-width: 592px){
+    .box-inputs #datepicker2, .box-inputs #datepicker, .box-inputs #datepicker3, .box-inputs #datepicker4{width:93%!Important;}
+    .sin-padd{padding:0!important;}
+}
+
+@media only screen and (min-device-width: 640px){
+    .box-inputs #datepicker2, .box-inputs #datepicker, .box-inputs #datepicker3, .box-inputs #datepicker4{width:95%!Important;}
+    .styled-select.slate{ max-width: initial; }
+}
+
+@media only screen and (min-device-width: 992px){
+    .box-inputs #datepicker2, .box-inputs #datepicker, .box-inputs #datepicker3, .box-inputs #datepicker4{width:85%!Important;}
+    .styled-select.slate{ max-width: initial; }
+}
+
+@media only screen and (min-device-width: 1200px){
+    .box-inputs #datepicker2, .box-inputs #datepicker, .box-inputs #datepicker3, .box-inputs #datepicker4{width:90%!Important;}
+}
+
+#datepicker2 .ui-datepicker {
+    border: initial!important;
+}
+
+.txt-labels{color:#0a80c1!important;font-weight:500;}
+
+.styled-select {
+   background: url(/assets/img/down.png) no-repeat right center;
+   height: 29px;
+   overflow: hidden;
+   width: 105%;
+   background-color:#f3f3f3!important;
+   font-weight: 600;
+   text-align: left;
+}
+
+
+.styled-select select {
+   background: transparent;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 280px;
+   border:none!important;
+}
+.styled-select.slate.paj{
+    background: url(/assets/img/pasajero.png) no-repeat right center;
+}
+
+.styled-select.slate {
+   background: url(/assets/img/clock.png) no-repeat right center;
+   height: 34px;
+   /*max-width: 230px;*/
+   font-size:12px!Important;
+   color:#353535;
+    border: 1px solid #e2e2e2;
+    border-radius:3px;
+    width: 100%;
+}
+
+.styled-select.slate select {
+   border:none!important;
+   height: 34px;
+   width: 280px;
+   font-weight:700;
+}
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 639px){
+    .styled-select{width: 100%!important;}
+    .styled-select.slate {width: 100%!important;}
+}
+@media only screen and (device-width: 640px){
+    .styled-select{width: 50%!important;}
+    .styled-select.slate {width: 50%!important;}
+}
+
+
+.alert {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.11);
+  display: table;
+  width: 100%;
+}
+
+.alert-white {
+  background-image: linear-gradient(to bottom, #fff, #f9f9f9);
+  border-top-color: #d8d8d8;
+  border-bottom-color: #bdbdbd;
+  border-left-color: #cacaca;
+  border-right-color: #cacaca;
+  color: #404040;
+  padding-left: 61px;
+  position: relative;
+}
+
+.alert-white.rounded {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.alert-white.rounded .icon {
+  border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+}
+
+.alert-white .icon {
+  text-align: center;
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #bdbdbd;
+  padding-top: 15px;
+}
+
+
+.alert-white .icon:after {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 1px solid #bdbdbd;
+  position: absolute;
+  border-left: 0;
+  border-bottom: 0;
+  top: 50%;
+  right: -6px;
+  margin-top: -3px;
+  background: #fff;
+}
+
+.alert-white .icon i {
+  font-size: 20px;
+  color: #fff;
+  left: 12px;
+  margin-top: -10px;
+  position: absolute;
+  top: 50%;
+}
+.alert-info {
+  background-color: #ffffff;
+  border: 1px solid #98cce6!Important;
+  color: #3a87ad;
+}
+.alert-info p{
+    font-size:13px!important;
+}
+
+.alert-white.alert-info .icon, 
+.alert-white.alert-info .icon:after {
+  border-color: #3a8ace;
+  background: #4d90fd;
+}
+
+.listado-horarios{margin:12px 0;list-style:none;padding:0;}
+.listado-horarios li{padding:4px 0 4px 12px;background:url(/assets/img/items.png) left center no-repeat;margin:1px 0;}
+
+.progress{background-color:#fff!important;}
+
+.slick-loading .slick-list{background: #fff url('/assets/img/loading.gif') center center no-repeat;!important}
+.pasajeros .form-control{font-size:12px!important;}
+
+.link-cel p a{color:#5295fa!important;text-decoration:underline;}
+.regular .slick-slide img {
+    width: 100%;
+}
+.regular .slick-next
+{
+    right: 25px;
+}
+@media screen and (min-width:760px) and (max-width:991px){
+    div#reservaExc{width:65%!important}
+    .box-inputs #datepicker2, .box-inputs #datepicker, .box-inputs #datepicker3, .box-inputs #datepicker4 {width: 93.5%!Important;}
+    .col-md-3.col-lg-3.col-sm-3.col-xs-12.txt-open.text-right.p-0{width:35%!important}
+}
+@media only screen and (min-device-width: 760px) and (max-device-width: 767px) {
+    .col-md-3.col-sm-3.btn-inc {
+        width: 25%;
+        float: left;
+    }
+
+    .col-md-9.col-sm-9.color-gris {
+        width: 75%;
+        float: left;
+    } 
+
+    section.container.oe-main-content.information .col-md-4.col-sm-6 {
+        width: 50%;
+        float: left;
+    }
+}

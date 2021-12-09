@@ -1,0 +1,362 @@
+.alto-fijo-top {
+  height: 130px !important;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+input:-moz-placeholder {
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+input::-moz-placeholder {
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+input:-ms-input-placeholder {
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+.box-inputs {
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+
+@media only screen and (device-width: 1024px) {
+  .box-inputs #datepicker2,
+  .box-inputs #datepicker {
+    width: 80% !important;
+  }
+}
+/* 
+.bg-listados {
+  background: rgba(255, 255, 255, 0.9);
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(0%, rgba(255, 255, 255, 0.7)),
+    color-stop(50%, rgba(255, 255, 255, 0.9)),
+    color-stop(100%, rgba(255, 255, 255, 0))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px 60px 10px;
+  width: 100%;
+} */
+
+.modulo-destacados {
+  margin: 0 0 15px 0;
+}
+
+.modulo-destacados p {
+  font-size: 14px !important;
+  color: #444;
+}
+
+.modulo-destacados section {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.modulo-destacados section span {
+  display: block;
+  position: relative;
+  background: #fff;
+  margin: 0 0 15px 0;
+}
+
+.modulo-destacados section span .over {
+  opacity: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+  cursor: pointer;
+}
+
+/* .modulo-destacados section span .over:hover {
+  opacity: 1;
+} */
+
+.modulo-destacados section span .over div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  color: #999a9b;
+  padding: 10px 20px 20px 20px;
+}
+
+.modulo-destacados section span .over div h6 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: #257bb4;
+}
+
+.modulo-destacados section span .over div h6 i {
+  margin: 0 6px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #888888;
+}
+
+.modulo-destacados section span .over div p {
+  font-size: 16px;
+}
+
+.modulo-destacados section span .over div strong {
+  color: #999a9b;
+}
+
+.modulo-destacados section span .masinfo {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.modulo-destacados section span .bg-deg-bco {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100% !important;
+}
+
+.precio-listado {
+  font-size: 20px !important;
+  color: #00c0ef !important;
+  font-weight: 400;
+  padding: 10px !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 360px) {
+  .precio-listado {
+    font-size: 18px !important;
+    color: #00c0ef !important;
+    font-weight: 400;
+    margin: 0 !important;
+  }
+
+  .modulo-destacados section span .over div h6 {
+    margin-bottom: 10px;
+  }
+
+  .modulo-destacados section span .over div p {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (device-width: 1024px) {
+  .precio-listado {
+    font-size: 15px !important;
+    padding: 10px !important;
+  }
+}
+
+.btn-nav-carrusel {
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+  border: 1px solid rgba(255, 255, 255, 1) !important;
+}
+
+.btn-nav-carrusel i.fa {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.btn-nav-carrusel:hover {
+  border: 1px solid #36b5e7 !important;
+}
+
+.btn-nav-carrusel:hover i.fa {
+  color: #fff !important;
+}
+
+.excursion-link,
+.excursion-link:hover,
+.excursion-link:active,
+.excursion-link:visited {
+  color: #ffffff;
+}
+
+.modulo-titinerario-resp {
+  display: none !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1281px) {
+  .contentbtn span {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+/* Inicio alerta */
+
+.circle_alert {
+  z-index: 9999;
+  border-radius: 100px;
+  bottom: 68px;
+  overflow: visible;
+  padding: 2px 5px;
+  position: absolute;
+  left: 35px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  height: 28px;
+  width: 28px;
+  outline: none;
+}
+
+.alert_msg {
+  border-radius: 100px;
+  padding: 2px 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 9998;
+  height: 24px;
+  width: 28px;
+  font-size: 10px;
+  line-height: 23px;
+  font-weight: 500;
+  padding: 0px;
+  left: 35px;
+  bottom: 70px;
+  cursor: pointer;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.alert_msg:not(:focus):hover {
+  display: block;
+  width: 195px;
+  padding-left: 34px;
+}
+
+.alert_msg:focus {
+  outline: none;
+}
+
+.circle_alert:hover ~ .alert_msg {
+  display: block;
+  width: 195px;
+  padding-left: 34px;
+}
+
+/* Inicio estilos last_booking */
+
+.last_booking {
+  background: #df1720;
+  border: 1px solid #fff;
+  color: #df1720;
+}
+
+.last_booking_icon {
+  background-image: url("/images/lighting2.svg");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.circle_alert:hover ~ .last_booking {
+  background-color: #fcefef;
+  border: 1px solid #df1720;
+}
+
+.alert_msg.last_booking:hover {
+  background-color: #fcefef;
+  border: 1px solid #df1720;
+}
+
+.autostart_last_booking {
+  animation: autostart;
+  animation-duration: 6s;
+  animation-timing-function: ease;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+}
+
+/* Efecto mouse hover para el scroll */
+@keyframes autostart {
+  0% {
+    width: 28px;
+  }
+
+  20% {
+    display: block;
+    width: 195px;
+    padding-left: 34px;
+    background-color: #fcefef;
+    border: 1px solid #df1720;
+  }
+
+  80% {
+    display: block;
+    width: 195px;
+    padding-left: 34px;
+    background-color: #fcefef;
+    border: 1px solid #df1720;
+  }
+
+  100% {
+    width: 28px;
+  }
+}
+
+/* Fin estilos last_booking */

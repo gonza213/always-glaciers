@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+
+ol.breadcrumb {
+  padding: 0px;
+  list-style: none;
+  background-color: #eee;
+  margin-bottom: 20px !important;
+  font-weight: 400;
+}
+
+ol.breadcrumb li {
+  display: inline;
+}
+
+ol.breadcrumb li + li:before {
+  padding: 6px;
+  color: black;
+  content: "\203A";
+  font-size: 14px;
+  padding-top: 1px;
+  line-height: 1.43;
+}
+
+ol.breadcrumb li a {
+  color: #0a80c1;
+  text-decoration: none;
+}
+
+ol.breadcrumb li a:hover {
+  color: #444;
+  text-decoration: underline;
+}
