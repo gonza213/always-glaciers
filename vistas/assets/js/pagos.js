@@ -10,23 +10,45 @@ function crearCookieDetalle(nombre, valor, diasExpedicion) {
 
 // RESERVA INDIVIDUAL
 // OBTENER DATOS
+var category = localStorage.getItem("Category");
 var local = JSON.parse(localStorage.getItem("reserva"));
 var precioCarrito = localStorage.getItem("TotalCarrito");
+var totalRenta = JSON.parse(localStorage.getItem("ReservaR"))
 
-if (local) {
-  var posTotal = local.total.replace(/[$.]/g, "");
-  var total = parseInt(posTotal);
-  var descripcion = local.excursion;
-  var page = "http://localhost/always/carrito-reserva";
-  crearCookieDetalle("Reserva_Paypal", "ok", 1);
-  document.cookie = "Carrito_Paypal=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-} else if (precioCarrito) {
-  var total = parseInt(precioCarrito);
-  var descripcion = "Excursiones";
-  var page = "http://localhost/always/carrito-reservas";
-  crearCookieDetalle("Carrito_Paypal", "ok", 1);
-  document.cookie = "Reserva_Paypal=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+if(category != 'Renta'){
+
+  if (local) {
+    var posTotal = local.total.replace(/[$.]/g, "");
+    var total = parseInt(posTotal);
+    var descripcion = local.excursion;
+    var page = "http://localhost/always/carrito-reserva";
+    crearCookieDetalle("Reserva_Paypal", "ok", 1);
+    document.cookie = "Carrito_Paypal=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    document.cookie = "Renta_Paypal=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+  } else if (precioCarrito) {
+    var total = parseInt(precioCarrito);
+    var descripcion = "Excursiones";
+    var page = "http://localhost/always/carrito-reservas";
+    crearCookieDetalle("Carrito_Paypal", "ok", 1);
+    document.cookie = "Reserva_Paypal=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    document.cookie = "Renta_Paypal=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+  }
+
+}else{
+
+  if (totalRenta) {
+    var posTotal = totalRenta.total.replace(/[$.]/g, "");
+    var total = parseInt(posTotal);
+    var descripcion = totalRenta.renta;
+    var page = "http://localhost/always/carrito-reserva-renta";
+    crearCookieDetalle("Renta_Paypal", "ok", 1);
+    document.cookie = "Reserva_Paypal=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    document.cookie = "Carrito_Paypal=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+  }
+
 }
+
+
 
 // MERCADO PAGO
 // Agrega credenciales de SDK

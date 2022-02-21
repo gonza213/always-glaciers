@@ -13,18 +13,14 @@ if (isset($_COOKIE['Category'])) {
         <div class="alto-fijo-top"></div>
         <section class="container oe-main-content" data-uk-scrollspy="{cls:'animate-started',delay:300}">
             <div class="row oe-effects oe-frombottom">
-                <?php if ($categoria == "Excursion") : ?>
                     <h2 class="oe-heading-3 oe-heading-deco-reflect m-t-40"><i class="fa fa-shopping-cart"></i> Formulario de
-                        Resevas</h2>
-                <?php else : ?>
-                    <h2 class="oe-heading-3 oe-heading-deco-reflect m-t-40"><i class="fa fa-shopping-cart"></i> Formulario de pasajes
-                        Buses</h2>
-                <?php endif; ?>
+                        Renta Car</h2>
+           
             </div>
         </section>
     </div>
 
-    <div class="container col-gris" id="containerReserva">
+    <div class="container col-gris" id="containerReservaR">
         <div class="row col-md-12" style="margin-top: 10px; margin-bottom: 10px; border: 1px solid gray; box-shadow: 2px 0px 4px #888888">
             <div class="col-md-6" style="margin-top: 10px; margin-bottom: 10px; border: 1px solid gray; box-shadow: 2px 0px 4px #888">
                 <form method="POST" id="guardarForm" enctype="multipart/form-data">
@@ -32,56 +28,65 @@ if (isset($_COOKIE['Category'])) {
                         <div class="card-body">
                             <h5>Formulario contacto:</h5>
                             <span class="text-danger">Campos obligatorios (*)</span> <br>
-                            <p>Pasajero 1 <button type="button" class="btn btn-info btn-sm pull-right" id="botonPasajero" data-toggle="modal" data-target="#modalPasajeros">Añadir pasajero</button></p>
+                            <!-- <p>Pasajero 1 <button type="button" class="btn btn-info btn-sm pull-right" id="botonPasajero" data-toggle="modal" data-target="#modalPasajeros">Añadir pasajero</button></p> -->
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <span>Nombre: <b class="text-danger">*</b></span>
-                                    <input type="text" class="form-control" placeholder="Nombres" id="nombre-reserva" name="nombre">
+                                    <input type="text" class="form-control" placeholder="Nombres" id="nombre-reservaR" name="nombre">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <span>Apellidos: <b class="text-danger">*</b></span>
-                                    <input type="text" class="form-control" placeholder="Apellido" id="apellido-reserva" name="apellidos">
+                                    <input type="text" class="form-control" placeholder="Apellidos" id="apellido-reservaR" name="apellidos">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <span>Email: <b class="text-danger">*</b></span>
-                                    <input type="email" class="form-control" placeholder="Email" id="email-reserva" name="email">
+                                    <span>DNI: <b class="text-danger">*</b></span>
+                                    <input type="number" class="form-control" placeholder="DNI" id="dni-reservaR" name="dni">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <span>Domicilio: <b class="text-danger">*</b></span>
+                                    <input type="text" class="form-control" placeholder="Domicilio" id="dol-reservaR" name="domicilio">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <span>Registro de conducir N°: <b class="text-danger">*</b></span>
+                                    <input type="text" class="form-control" placeholder="N° de registro" id="registro-reservaR" name="registro">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span>Fecha de expiración: <b class="text-danger">*</b></span>
+                                    <input type="text" class="form-control" placeholder="Fecha expiración" id="exp-reservaR" name="expiracion">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span>Fecha y hora y lugar de retiro : <b class="text-danger">*</b></span>
+                                    <textarea name="retiro" class="form-control" rows="5" placeholder="Escribe fecha, hora y lugar..." id="retiroR"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span>Fecha y hora y lugar de devolución : <b class="text-danger">*</b></span>
+                                    <textarea name="devolucion" class="form-control" rows="5" placeholder="Escribe fecha, hora y lugar..." id="devolucionR"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <span>Teléfono: <b class="text-danger">*</b></span>
-                                    <input type="text" class="form-control" placeholder="Teléfono" id="tel-reserva" name="tel">
+                                    <input type="text" class="form-control" placeholder="Teléfono" id="tel-reservaR" name="tel">
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <span>DNI o Pasaporte: <b class="text-danger">*</b></span>
-                                    <input type="text" class="form-control" placeholder="Dni o Pasaporte" id="dni-reserva" name="dni">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <span>Fecha nacimiento: <b class="text-danger">*</b></span>
-                                    <input type="date" class="form-control" placeholder="Fecha nacimiento" id="edad-reserva" name="edad">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <span>Nacionalidad: <b class="text-danger">*</b></span>
-                                    <input type="text" class="form-control" placeholder="Nacionalidad" id="nacionalidad-reserva" name="nacionalidad">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="button" style="margin-bottom: 5px;" onclick="btnLimpiar()" class="btn btn-warning btn-sm pull-right">Limpiar Datos</button>
-                            </div>
+                         
                             <div class="col-md-12" style="border-top: 2px solid gray; margin-bottom: 5px;">
                             </div>
-                            <div id="anadirPasajero">
-                            </div>
+                          
                         </div>
                     </div>
                 </form>
@@ -92,37 +97,22 @@ if (isset($_COOKIE['Category'])) {
                     <div class="card-body">
                         <h4>Pedido de Reserva</h4>
                         <ul class="list-group text-info p-5">
-                            <?php if ($categoria == "Excursion") : ?>
                                 <li class="list-group-item">
-                                    <span class="badge" style="background: #024e6a" id="excursionPed"></span>
-                                    <b>Excursión:</b>
+                                    <span class="badge" style="background: #024e6a" id="vehicPed"></span>
+                                    <b>Vehículo:</b>
                                 </li>
-                            <?php else : ?>
-                                <li class="list-group-item">
-                                    <span class="badge" style="background: #024e6a" id="excursionPed"></span>
-                                    <b>Bus:</b>
-                                </li>
-                            <?php endif ?>
+                          
                             <li class="list-group-item">
-                                <span class="badge" style="background: #024e6a" id="fechaPed"></span>
-                                <b>Fecha:</b>
+                                <span class="badge" style="background: #024e6a" id="fechaEPed"></span>
+                                <b>Fecha entrada:</b>
                             </li>
                             <li class="list-group-item">
-                                <span class="badge" style="background: #024e6a" id="turnoPed"></span>
-                                <b>Turno:</b>
+                                <span class="badge" style="background: #024e6a" id="fechaSPed"></span>
+                                <b>Fecha salida:</b>
                             </li>
                             <li class="list-group-item">
-                                Pasajeros: <br>
-                                <ul class="list-group text-info">
-                                    <li class="list-group-item">
-                                        <span class="badge" style="background: #024e6a" id="adultoPed"></span>
-                                        <b>Adultos:</b>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <span class="badge" style="background: #024e6a" id="ninosPed"></span>
-                                        <b>Niños:</b>
-                                    </li>
-                                </ul>
+                            <span class="badge" style="background: #024e6a" id="diasPed"></span>
+                                <b>Cantidad de días:</b>
                             </li>
                             <li class="list-group-item">
                                 <span class="badge" style="background: #024e6a" id="opcionalesPed"></span>
@@ -137,7 +127,7 @@ if (isset($_COOKIE['Category'])) {
                         <div class="row p-5">
                             <h5 style="margin-left: 10px;">Opciones de pago:</h5>
                             <div class="col-md-10">
-                                <select name="" class="form-control" id="selectPago">
+                                <select name="" class="form-control" id="selectPagoR" onclick="pago()">
                                     <option value="">Seleccione una opcion...</option>
                                     <option value="mercado">Mercado Pago</option>
                                     <option value="paypal">Paypal</option>
@@ -188,9 +178,9 @@ if (isset($_COOKIE['Category'])) {
                     MercadoPago\SDK::setAccessToken("APP_USR-4951476334635977-101012-f572cbdb78968afb6b8990384f770051__LA_LD__-44572108");
                     //...
                     $payment = new MercadoPago\Payment();
-                    $payment->transaction_amount = $_COOKIE["Precio"];
+                    $payment->transaction_amount = $_COOKIE['TotalRenta'];
                     $payment->token = $token;
-                    $payment->description = $_COOKIE["Excursion"];
+                    $payment->description = 'Renta Car';
                     $payment->installments = $installments;
                     $payment->payment_method_id = $payment_method_id;
                     $payment->issuer_id = $issuer_id;
@@ -203,22 +193,17 @@ if (isset($_COOKIE['Category'])) {
 
                     // Imprime el estado del pago
                     if ($payment->status == "approved") {
+                       
                         $datos = array(
-                            "excursion" => $_COOKIE['Excursion'],
-                            "total" => $_COOKIE['Precio'],
-                            "turno" => $_COOKIE['Turno'],
-                            "adultos" => $_COOKIE['Adultos'],
-                            "ninos" => $_COOKIE['Ninos'],
-                            "bebes" => $_COOKIE['Bebes'],
-                            "fecha_reserva" => $_COOKIE['FechaReserva'],
-                            "opcionales" => $_COOKIE['Opcionales'],
+                            "excursiones" => $_COOKIE['Renta'],
                             "pasajeros" => $_COOKIE['Pasajeros'],
                             "metodo_pago" => $_COOKIE['Metodo'],
+                            "total" => $_COOKIE['TotalRenta'],
                             "operacion" => $operacion,
                             "numero_transaccion" => $payment->id
                         );
 
-                        $respuesta = ControladorReservas::ctrCrearReserva($datos);
+                        $respuesta = ControllerCarrito::ctrEnviarCarrito($datos);
 
 
                         if ($respuesta == 'ok') {
@@ -227,7 +212,7 @@ if (isset($_COOKIE['Category'])) {
                                     
                                     Swal.fire({
                                     icon: 'success',
-                                    title: '¡Felicitaciones! Has reservado la excursión exitosamente',
+                                    title: '¡Felicitaciones! Has reservado tu vehiculo exitosamente',
                                     showConfirmButton: true,
                                     confirmButtonText: 'Cerrar',
                                     closeOnConfirm: false
@@ -283,53 +268,3 @@ if (isset($_COOKIE['Category'])) {
 
 </main>
 
-
-<!-- Modal -->
-<div class="modal fade" id="modalPasajeros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Añadir pasajero</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form id="formPasajero">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="apellidos" placeholder="Apellidos">
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="dni" placeholder="Dni o Pasaporte">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="number" class="form-control" name="edad" placeholder="Edad">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="nacionalidad" placeholder="Nacionalidad">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" onclick="guardarDatos()">Añadir pasajero</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>

@@ -1088,6 +1088,7 @@ function reservar() {
   var bebes = $("#quantity3").val();
   var total = $("#total").html();
   var categoria = $('#category').val();
+  var reservar = $('#btn-reservar').attr('data-category');
 
   if (!fecha || !turno || !adultos) {
     Swal.fire(
@@ -1109,6 +1110,7 @@ function reservar() {
         $("#contentRsm").fadeIn(1000).html(data);
 
         localStorage.setItem("reserva", JSON.stringify(datos));
+        localStorage.setItem("Category", categoria);
 
         var guardado = localStorage.getItem("reserva");
 
@@ -1135,6 +1137,7 @@ function reservar() {
         crearCookie("FechaReserva", f, 1);
         crearCookie("Opcionales", o, 1);
         crearCookie("Categoria", c, 1);
+        crearCookie("Category", reservar, 1);
 
         // $('#exc').html(q);
         $("#precioReservaTotal").val(p);
@@ -1210,6 +1213,65 @@ function reservar() {
     $("#frmReserva").css("display", "none");
     $("#frmCasi").css("display", "block");
   }
+}
+
+function reservarRenta(){
+  var renta = $('#tituloRenta').html();
+  var entrada = $('#datepickerEntradaR').val();
+  var salida = $('#datepickerSalidaR').val();
+  var dias = $('#cantidadDias').val();
+  var total = $('#total').html();
+  var categoria = $('#categoryR').val();
+
+
+  $("#contentRsm").html(
+    '<div class="loading"><img src="vistas/assets/img/loader.gif" style="width: 70px" alt="loading" /><br/>Un momento, por favor...</div>'
+  );
+
+  $.ajax({
+    type: "POST",
+    url: "ajax/reserva2.php",
+    success: function (data) {
+
+      $("#contentRsm2").fadeIn(1000).html(data);
+
+      $('#fechR').html(entrada)
+      $('#precioReservaRTotal').val(total)
+
+      crearCookie("Category", "Renta", 1);
+
+      var datos = {
+        renta,
+        entrada,
+        salida,
+        dias,
+        total,
+        opcionales
+      }
+
+      localStorage.setItem('ReservaR', JSON.stringify(datos))
+      localStorage.setItem('Category', categoria)
+      crearCookie("TotalRenta", total, 1);
+
+      
+    },
+    //Cargamos finalmente el contenido deseado
+  });
+
+
+  const opcionales = [];
+
+
+  for (let i = 1; i <= 3; i++) {
+    if ($(`#rentaRsm${i}`).prop("checked")) {
+      var almuerzo = $(`#tituloOpc${i}`).html();
+
+      opcionales.push(almuerzo);
+    }
+  }
+
+  $("#frmReservaR").css("display", "none");
+  $("#frmCasiR").css("display", "block");
 }
 
 function volver() {

@@ -67,7 +67,7 @@ include "modulos/cabecera.php";
                                 <img src="<?php echo $servidor . $value["banner"]; ?>" class="img-responsive"
                                     style="width: 320px !important; height: 260px !important">
                                 <form id="my_form<?php echo $value["id"]; ?>" method="post"
-                                    action="index.php?pagina=reserva&id=<?php echo $value["id"]; ?>" method="post">
+                                    action="index.php?pagina=reserva&id=<?php echo $value["id"]; ?>&categoria=<?php echo $value["category"]; ?>" method="post">
                                     <input type="hidden" name="fecha" value="<?php echo date('y-m-d') ?>">
                                     <a href="javascript:{}"
                                         onclick="document.getElementById('my_form<?php echo $value["id"]; ?>').submit();"
@@ -94,7 +94,7 @@ include "modulos/cabecera.php";
                                     ARS </sup>
                             </div>
                         </div>
-                        <form method="post" action="index.php?pagina=reserva&id=<?php echo $value["id"]; ?>">
+                        <form method="post" action="index.php?pagina=reserva&id=<?php echo $value["id"]; ?>&categoria=<?php echo $value["category"]; ?>">
                             <div class="col-xs-6 col-md-6 col-sm-6 m-p-0">
                                 <input type="hidden" name="fecha" value="<?php echo date('y-m-d') ?>">
                                 <button type="submit"

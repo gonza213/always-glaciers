@@ -9,6 +9,8 @@ function anadirCarrito() {
   var categoria = $("#category").val();
 
  crearCookie('Categoria_Carrito', categoria, 1);
+ localStorage.setItem("Category", categoria);
+ localStorage.removeItem('reserva')
 
   if (!fecha || !turno || !adultos) {
     Swal.fire(

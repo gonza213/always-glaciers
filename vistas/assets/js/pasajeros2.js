@@ -556,6 +556,66 @@ $("#containerReserva").hover(function () {
   var nacionalidad = $("#nacionalidad-reserva").val(ppal.nacionalidad);
 });
 
+$("#containerReservaR").hover(function () {
+  var guardado = localStorage.getItem("ReservaR");
+
+  if (guardado) {
+    var ver = JSON.parse(guardado);
+
+    var r = ver.renta;
+    var e = ver.entrada;
+    var s = ver.salida;
+    var d = ver.dias;
+    var t = ver.total;
+    var op = ver.opcionales;
+
+    opcionales = [];
+
+    op.forEach((item) => {
+      var opcional = item;
+
+      opcionales.push(opcional + ", <br>");
+    });
+
+    $("#vehicPed").html(r);
+    $("#fechaEPed").html(e);
+    $("#fechaSPed").html(s);
+    $("#diasPed").html(d);
+    $("#totalPed").html(t);
+    $("#opcionalesPed").html(opcionales);
+  }
+
+  // if (guardado) {
+  //   var ver = JSON.parse(guardado);
+
+  //   var q = ver.renta;
+  //   var p = ver.total;
+  //   var t = ver.turno;
+  //   var f = ver.fecha;
+  //   var a = ver.adultos;
+  //   var n = ver.ninos;
+  //   var b = ver.bebes;
+  //   var op = ver.opcionales;
+
+  //   opcionales = [];
+
+  //   op.forEach((item) => {
+  //     var opcional = item;
+
+  //     opcionales.push(opcional + ", <br>");
+  //   });
+
+  //   $("#excursionPed").html(q);
+  //   $("#totalPed").html(p);
+  //   $("#turnoPed").html(t);
+  //   $("#fechaPed").html(f);
+  //   $("#adultoPed").html(a);
+  //   $("#ninosPed").html(n);
+  //   $("#beb").html(b);
+  //   $("#opcionalesPed").html(opcionales);
+  // }
+});
+
 $("#botonPasajero").click(function () {
   var nombre = $("#nombre-reserva").val();
   var apellido = $("#apellido-reserva").val();
@@ -888,5 +948,66 @@ function btnLimpiar() {
     setTimeout(refrescar, 1600);
   } else {
     console.log("No existe datos");
+  }
+}
+
+function pago() {
+  var seleccionar = $("#selectPagoR").val();
+  var nombre = $("#nombre-reservaR").val();
+  var apellido = $("#apellido-reservaR").val();
+  var dni = $("#dni-reservaR").val();
+  var dol = $("#dol-reservaR").val();
+  var registro = $("#registro-reservaR").val();
+  var exp = $("#exp-reservaR").val();
+  var retiro = $("#retiroR").val();
+  var devolucion = $("#devolucionR").val();
+  var tel = $("#tel-reservaR").val();
+  var totalRenta = JSON.parse(localStorage.getItem("ReservaR"))
+  var posTotal = totalRenta.total.replace(/[$.]/g, "");
+  var total = parseInt(posTotal);
+  crearCookie("TotalRenta", total, 1);
+  crearCookie("Renta", JSON.stringify(totalRenta), 1);
+
+  var datosP = {
+    nombre,
+    apellido,
+    dni,
+    dol,
+    registro,
+    exp,
+    retiro,
+    devolucion,
+    tel,
+  };
+
+  if (
+    !nombre ||
+    !apellido ||
+    !dni ||
+    !dol ||
+    !registro ||
+    !exp ||
+    !retiro ||
+    !devolucion ||
+    !tel
+  ) {
+    Swal.fire(
+      "Complete todos los campos requeridos (*)!",
+      'Haga click en "OK" para continuar!',
+      "warning"
+    );
+  } else if (seleccionar == "mercado") {
+    crearCookie("Pasajeros", JSON.stringify(datosP), 1);
+    $("#divMercado").css("display", "block");
+    $("#divPaypal").css("display", "none");
+    crearCookie("Metodo", "Mercado Pago", 1);
+  } else if (seleccionar == "paypal") {
+    crearCookie("Pasajeros", JSON.stringify(datosP), 1);
+    $("#divMercado").css("display", "none");
+    $("#divPaypal").css("display", "block");
+    crearCookie("Metodo", "PayPal", 1);
+  }else{
+    $("#divMercado").css("display", "none");
+    $("#divPaypal").css("display", "none");
   }
 }

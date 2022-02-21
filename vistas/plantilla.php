@@ -485,6 +485,9 @@ if (isset($_GET["status"])) {
         } else if ($_GET["pagina"] == "carrito-reservas") {
 
             include "paginas/carrito-compras.php";
+        } else if ($_GET["pagina"] == "carrito-reserva-renta") {
+
+            include "paginas/carrito-compra-renta.php";
         } else if ($_GET["pagina"] == "quienes-somos") {
 
             include "paginas/about.php";
@@ -609,6 +612,7 @@ if (isset($_GET["status"])) {
             );
         }
     </script>
+ 
 
 </body>
 
