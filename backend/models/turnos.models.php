@@ -122,4 +122,64 @@ class ModeloTurnos
 
         $stmt = null;
     }
+
+
+    //dia reservada
+    static public function mdlCrearDia($tabla, $datos)
+    {
+
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(dia, id_excursion) VALUES (:dia, :id_excursion)");
+
+        $stmt->bindParam(":dia", $datos["dia"], PDO::PARAM_STR);
+        $stmt->bindParam(":id_excursion", $datos["id_excursion"], PDO::PARAM_INT);
+
+
+        if ($stmt->execute()) {
+
+            return "ok";
+        } else {
+
+            return "error";
+        }
+
+        $stmt->close();
+
+        $stmt = null;
+    }
+
+      // MOSTRAR RELACION
+      static public function mdlMostrarRelacionDia($tabla1, $tabla2)
+      {
+  
+          $stmt = Conexion::conectar()->prepare("SELECT $tabla1.*, $tabla2.*, DATE_FORMAT(dia, '%d/%m/%y') AS dia FROM $tabla1 INNER JOIN $tabla2 ON $tabla1.id = $tabla2.id_excursion");
+  
+          $stmt->execute();
+  
+          return $stmt->fetchAll();
+  
+          $stmt->close();
+  
+          $stmt = null;
+      }
+
+      // BORRAR 
+    static public function mdlBorrarDia($tabla, $datos)
+    {
+
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_i = :id_i");
+
+        $stmt->bindParam(":id_i", $datos, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+
+            return "ok";
+        } else {
+
+            return "error";
+        }
+
+        $stmt->close();
+
+        $stmt = null;
+    }
 }

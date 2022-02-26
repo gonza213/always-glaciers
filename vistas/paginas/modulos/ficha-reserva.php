@@ -26,7 +26,7 @@
                     <!-- <button type="submit" class="btn oe-btn oe-btn-blue btn-home btn-home-calendario">
                         <span>VER EXCURSIONES</span>
                     </button> -->
-                    <button type="button" onclick="noFunciona()" class="btn oe-btn oe-btn-blue btn-home btn-home-calendario">
+                    <button type="button" onclick="almanaque()" class="btn oe-btn oe-btn-blue btn-home btn-home-calendario">
                         <span>VER EXCURSIONES</span>
                     </button>
                 </div>

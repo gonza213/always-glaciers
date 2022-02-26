@@ -74,7 +74,7 @@ mp.checkout({
 });
 
 //CONVERTIDOR
-let precioDolar = 98.94;
+let precioDolar = usd;
 let totalPrecio = Number.parseFloat(total / precioDolar).toFixed(2);
 
 // let url = "http://api.currencylayer.com/live?access_key=2f11302b22dbe72165f1c6a267bf54d4&currencies=ARS";

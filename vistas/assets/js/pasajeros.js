@@ -10,6 +10,8 @@
 //     $('#quantity').val(parseInt($('#quantity').val()) + 1);
 // });
 
+const usd = $('#usd').val();
+
 $("#enviarCarrito").click(function () {
   var quantity = $("#quantity").val();
   var quantity2 = $("#quantity2").val();
@@ -111,6 +113,14 @@ function restar() {
       }
     });
 
+    $("#totalUsd").html(function () {
+      var dividir = parseInt((parseInt(quitar3) - parseInt(quitar1))/usd);
+
+      if ($("#quantity").val() >= 1) {
+        return commaSeparateNumber(dividir);
+      }
+    });
+
     $("#precio_bajo").html(function () {
       var dividir = parseInt(quitar3) - parseInt(quitar1);
 
@@ -205,6 +215,13 @@ function restar2() {
         return commaSeparateNumber(dividir);
       }
     });
+    $("#totalUsd").html(function () {
+      var dividir = parseInt((parseInt(quitar2) - parseInt(quitar1))/usd);
+
+      if ($("#quantity2").val() >= 0) {
+        return commaSeparateNumber(dividir);
+      }
+    });
 
     if ($("#quantity2").val() <= 0) {
       $("#min2").attr("disabled", "disabled");
@@ -241,7 +258,9 @@ function sumar() {
   var p = parseInt(quitar1) * parseInt(cantidad);
   var a = parseInt(quitar3) * parseInt(cantidad);
   var s = n + p;
+  var u = parseInt((n + p)/usd);
   var suma = commaSeparateNumber(s);
+  var sumaUsd = commaSeparateNumber(u);
   var s2 = a + n;
   var suma2 = commaSeparateNumber(s2);
 
@@ -299,6 +318,7 @@ function sumar() {
     });
   } else {
     $("#total").html(suma);
+    $("#totalUsd").html(sumaUsd);
     $("#precio_bajo").html(suma);
     $("#precio_alto").html(suma2);
     $("#subTotal").val(suma);
@@ -320,7 +340,9 @@ function sumar2() {
   var n = parseInt(cantidad2) * parseInt(quitar2);
   var p = parseInt(cantidad) * parseInt(quitar1);
   var s = p + n;
+  var u = parseInt((n + p)/usd);
   var suma = commaSeparateNumber(s);
+  var sumaUsd = commaSeparateNumber(u);
 
   if (
     $("#trasladoRsm1").prop("checked") ||
@@ -371,6 +393,7 @@ function sumar2() {
     });
   } else {
     $("#total").html(suma);
+    $("#totalUsd").html(sumaUsd);
   }
 }
 
@@ -438,6 +461,8 @@ $("#trasladoRsm1").click(function () {
   if (cantidad >= 1) {
     if ($("#trasladoRsm1").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -470,6 +495,8 @@ $("#trasladoRsm2").click(function () {
   if (cantidad >= 1) {
     if ($("#trasladoRsm2").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -501,6 +528,8 @@ $("#trasladoRsm3").click(function () {
   if (cantidad >= 1) {
     if ($("#trasladoRsm3").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -532,6 +561,8 @@ $("#almuerzoRsm1").click(function () {
   if (cantidad >= 1) {
     if ($("#almuerzoRsm1").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
 
@@ -565,6 +596,8 @@ $("#almuerzoRsm2").click(function () {
   if (cantidad >= 1) {
     if ($("#almuerzoRsm2").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -596,6 +629,8 @@ $("#almuerzoRsm3").click(function () {
   if (cantidad >= 1) {
     if ($("#almuerzoRsm3").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -627,6 +662,8 @@ $("#viandaRsm1").click(function () {
   if (cantidad >= 1) {
     if ($("#viandaRsm1").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -658,6 +695,8 @@ $("#viandaRsm2").click(function () {
   if (cantidad >= 1) {
     if ($("#viandaRsm2").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -689,6 +728,8 @@ $("#viandaRsm3").click(function () {
   if (cantidad >= 1) {
     if ($("#viandaRsm3").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -720,6 +761,8 @@ $("#navegacionRsm1").click(function () {
   if (cantidad >= 1) {
     if ($("#navegacionRsm1").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -751,6 +794,8 @@ $("#navegacionRsm2").click(function () {
   if (cantidad >= 1) {
     if ($("#navegacionRsm2").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -782,6 +827,8 @@ $("#navegacionRsm3").click(function () {
   if (cantidad >= 1) {
     if ($("#navegacionRsm3").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -813,6 +860,8 @@ $("#entradaRsm1").click(function () {
   if (cantidad >= 1) {
     if ($("#entradaRsm1").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -843,6 +892,8 @@ $("#entradaRsm2").click(function () {
   if (cantidad >= 1) {
     if ($("#entradaRsm2").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -874,6 +925,8 @@ $("#entradaRsm3").click(function () {
   if (cantidad >= 1) {
     if ($("#entradaRsm3").prop("checked")) {
       var total = parseInt(quitar2) + trasA + trasN;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA + trasN)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -916,14 +969,7 @@ $("#entradaRsm3").click(function () {
 
 // })
 
-$(".modulo-itinerario").click(function () {
-  var t1 = $("#datepickerEntrada").datepicker("getDate").getDate();
-  var t2 = $("#datepickerSalida").datepicker("getDate").getDate();
-  var dia1 = parseInt(t1);
-  var dia2 = parseInt(t2);
-  var cantidad = dia2 - dia1;
-  console.log(cantidad);
-});
+
 
 // $('#frmReserva').hover(function() {
 //     var t1 = $('#datepickerEntrada').datepicker('getDate').getDate();
@@ -963,6 +1009,8 @@ $("#frmReservaR").hover(function () {
       var precio = $("#resultado2").attr("data-precio");
       var quitar = precio.replace(/[$.]/g, "");
       var total = parseInt(quitar * dias);
+      var totalUsd = parseInt((parseInt(quitar * dias))/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -989,6 +1037,8 @@ $("#rentaRsm1").click(function () {
   if (cantidad >= 1) {
     if ($("#rentaRsm1").prop("checked")) {
       var total = parseInt(quitar2) + trasA;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -1019,6 +1069,8 @@ $("#rentaRsm2").click(function () {
   if (cantidad >= 1) {
     if ($("#rentaRsm2").prop("checked")) {
       var total = parseInt(quitar2) + trasA;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -1049,6 +1101,8 @@ $("#rentaRsm3").click(function () {
   if (cantidad >= 1) {
     if ($("#rentaRsm3").prop("checked")) {
       var total = parseInt(quitar2) + trasA;
+      var totalUsd = parseInt((parseInt(quitar2) + trasA)/usd);
+      $("#totalUsd").html(commaSeparateNumber(totalUsd));
 
       $("#total").html(commaSeparateNumber(total));
     } else {
@@ -1278,3 +1332,52 @@ function volver() {
   $("#frmReserva").css("display", "block");
   $("#frmCasi").css("display", "none");
 }
+
+function formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [day, month, year].join('-');
+}
+
+
+
+// ITINERARIO
+$('.itinerario').hover(function() {
+  var fecha1 = localStorage.getItem("Fecha1")
+   $('#fechaPpal').html(fecha1)
+   $('#fechaLlegada').val(fecha1)
+
+   var fecha2 = localStorage.getItem("Fecha2")
+   $('#fechaSalida').val(fecha2)
+
+  const dias = localStorage.getItem("Dias")
+  const entrada = localStorage.getItem("Date1")
+  const day = new Date(entrada)
+
+  for (let i = 0; i < dias; i++) {
+
+
+    day.setDate(day.getDate() + 1);
+
+    console.log(day);
+
+    if($('#btnArray')){
+      $(`.btn-${i}`).remove()
+    }
+   
+    $('#fechasBtn').append(
+      `<span id="btnArray"><a href="index.php?pagina=itinerario-listado&fecha=${formatDate(day)}" class="btn btn-warning btn-sm btn-${i}" style="margin-right: 3px; margin-top: 2px">${formatDate(day)}</a></span>`
+    )
+    
+  }
+
+
+})

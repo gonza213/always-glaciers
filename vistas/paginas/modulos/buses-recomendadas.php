@@ -68,10 +68,40 @@ $planes = ControladorPlanes::ctrMostrarPlanes();
                                     ARG </sup>
                                 <sup id="moneda2"></sup>
                             </div> -->
-                            <div class="precio-listado"><sup>$</sup>
+                            <div class="precio-listado arg"><sup>$</sup>
                                 <?php echo $value["precio_bajo"]; ?>
                                 <sup>
                                     ARG </sup>
+
+                            </div>
+                            <div class="precio-listado usd" style="display: none"><sup>$</sup>
+                            <?php
+                               $precio = str_replace(".", "", $value["precio_bajo"]);
+                               $usd = $precio/$moneda_usd;
+                               echo intval($usd);
+                            ?>
+                                <sup>
+                                    USD </sup>
+
+                            </div>
+                            <div class="precio-listado eur" style="display: none"><sup>$</sup>
+                            <?php
+                               $precio = str_replace(".", "", $value["precio_bajo"]);
+                               $eur = $precio/$moneda_eur;
+                               echo intval($eur);
+                            ?>
+                                <sup>
+                                    EUR </sup>
+
+                            </div>
+                            <div class="precio-listado brl" style="display: none"><sup>$</sup>
+                            <?php
+                               $precio = str_replace(".", "", $value["precio_bajo"]);
+                               $brl = $precio/$moneda_brl;
+                               echo intval($brl);
+                            ?>
+                                <sup>
+                                    BRL </sup>
 
                             </div>
                         </div>

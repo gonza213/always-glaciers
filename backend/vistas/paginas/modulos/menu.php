@@ -235,6 +235,18 @@ $info = ControladorInfo::ctrMostrarInfo();
                                 <p>tripAdvisor</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="dias-reservados" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Dias reservados</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="divisas" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Divisas</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

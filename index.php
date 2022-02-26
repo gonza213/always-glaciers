@@ -19,6 +19,7 @@ require_once "controllers/otros.controllers.php";
 require_once "controllers/turnos.controller.php";
 require_once "controllers/transferencia.controller.php";
 require_once "controllers/carrito.controllers.php";
+require_once "controllers/divisas.controller.php";
 
 
 require_once "models/banner.models.php";
@@ -38,6 +39,7 @@ require_once "models/otros.models.php";
 require_once "models/turnos.models.php";
 require_once "models/trasnferencia.models.php";
 require_once "models/carrito.models.php";
+require_once "models/divisas.model.php";
 
 require_once "extensiones/vendor/autoload.php";
 

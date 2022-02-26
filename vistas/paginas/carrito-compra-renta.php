@@ -120,6 +120,7 @@ if (isset($_COOKIE['Category'])) {
                             </li>
                         </ul>
                         <h4 class="text-right" style="padding: 15px;">Total: $<b style="color: #024e6a" id="totalPed"></b> </h4>
+                        <h4 class="text-right usd" style="padding: 15px; display:none">Total: $<b style="color: #024e6a" id="totalPedUsd"></b> USD </h4>
                     </div>
                 </div>
                 <div class="card" style="margin-top: 10px; padding-left: 10px; margin-bottom: 10px; border: 1px solid gray; box-shadow: 2px 0px 4px #888888">

@@ -1,3 +1,6 @@
+
+
+
 function ver() {
   $("#ocultar-precios").remove();
 
@@ -519,6 +522,7 @@ $("#containerReserva").hover(function () {
 
     var q = ver.excursion;
     var p = ver.total;
+    var u = parseInt((ver.total).replace(/[$.]/g, "")/usd);
     var t = ver.turno;
     var f = ver.fecha;
     var a = ver.adultos;
@@ -536,6 +540,7 @@ $("#containerReserva").hover(function () {
 
     $("#excursionPed").html(q);
     $("#totalPed").html(p);
+    $("#totalPedUsd").html(u);
     $("#turnoPed").html(t);
     $("#fechaPed").html(f);
     $("#adultoPed").html(a);
@@ -567,6 +572,7 @@ $("#containerReservaR").hover(function () {
     var s = ver.salida;
     var d = ver.dias;
     var t = ver.total;
+    var u = parseInt((ver.total).replace(/[$.]/g, "")/usd);
     var op = ver.opcionales;
 
     opcionales = [];
@@ -582,6 +588,7 @@ $("#containerReservaR").hover(function () {
     $("#fechaSPed").html(s);
     $("#diasPed").html(d);
     $("#totalPed").html(t);
+    $("#totalPedUsd").html(u);
     $("#opcionalesPed").html(opcionales);
   }
 
@@ -1011,3 +1018,82 @@ function pago() {
     $("#divPaypal").css("display", "none");
   }
 }
+
+
+
+
+
+function almanaque(){
+
+  const entrada = $('#datepickerEntrada').datepicker('getDate')
+  const salida = $('#datepickerSalida').datepicker('getDate')
+  
+
+
+  if(!entrada || !salida){
+    alert('Complete todos los datos')
+  }else if(entrada && salida){
+    var difM = salida - entrada; // diferencia en milisegundos
+    var difD = difM / (1000 * 60 * 60 * 24); // diferencia en dias
+    var dias = difD;
+    if (dias >= 1) {
+
+      localStorage.setItem('Date1', entrada);
+      localStorage.setItem('Dias', dias);
+      localStorage.setItem('Fecha1', formatDate(entrada))
+      localStorage.setItem('Fecha2', formatDate(salida))
+      crearCookie("Entrada", formatDate(entrada), 1);
+    
+
+       window.location = `index.php?pagina=itinerario-listado&fecha=${formatDate(entrada)}`
+    
+
+
+    } else {
+      Swal.fire(
+        "La fecha de salida debe ser posterior!",
+        "You clicked the button!",
+        "warning"
+      );
+    
+    }
+  }
+}
+
+
+
+        function convertirDolar() {
+
+            $('.usd').css('display', 'block');
+            $('.arg').css('display', 'none');
+            $('.eur').css('display', 'none');
+            $('.brl').css('display', 'none');
+        }
+
+        function convertirPeso() {
+
+            $('.usd').css('display', 'none');
+            $('.arg').css('display', 'block');
+            $('.eur').css('display', 'none');
+            $('.brl').css('display', 'none');
+        }
+
+        function convertirEuro() {
+
+            $('.usd').css('display', 'none');
+            $('.arg').css('display', 'none');
+            $('.eur').css('display', 'block');
+            $('.brl').css('display', 'none');
+        }
+
+        function convertirReal() {
+
+            $('.usd').css('display', 'none');
+            $('.arg').css('display', 'none');
+            $('.eur').css('display', 'none');
+            $('.brl').css('display', 'block');
+        }
+
+
+
+

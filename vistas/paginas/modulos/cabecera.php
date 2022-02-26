@@ -136,7 +136,7 @@ $redes = ControladorOtros::ctrMostrarRedes();
                                 <li class="menu-item menu-item-has-child col-1"><a href="<?php echo $rutas ?>contact">Contacto</a>
                                 </li>
                                 <li class="menu-item menu-item-has-child col-1"><a style="cursor: pointer" data-toggle="modal" data-target="#myModal"> <i class="fa fa-search"></i> </a>
-                                 </li>
+                                </li>
 
 
 
@@ -205,17 +205,21 @@ $redes = ControladorOtros::ctrMostrarRedes();
             <ul class="uk-nav uk-nav-offcanvas" id="monedaSelect2">
                 <li class="menu-item menu-item-has-child col-1"><a href="#">Moneda</a>
                     <ul class="submenu ">
-                        <li class="tit-menu-idioma-item active">ARS Pesos Argentinos</li>
-                        <form action="">
+                        <?php if ($_GET['pagina'] == 'carrito-reservas' || $_GET['pagina'] == 'carrito-reserva' || $_GET['pagina'] == 'carrito-reserva-renta' ) : ?>
+                            <li class="tit-menu-idioma-item active" onClick="convertirPeso()" style="cursor:pointer">ARS Pesos Argentinos</li>
+
                             <li class="tit-menu-idioma-item"><a class="selectOption" onClick="convertirDolar()" style="cursor:pointer">USD Dólares Americanos</a></li>
-                        </form>
-                        <li class="tit-menu-idioma-item"><a onClick="convertirEuro()" class="selectOption">EUR Euros</a>
-                        </li>
-                        <li class="tit-menu-idioma-item"><a href="#selectOption" class="selectOption" value="9" data-valor="16" data-codigo="BRL" data-descripcion="Reales">BRL Reales</a></li>
-                        <li class="tit-menu-idioma-item"><a href="#selectOption" class="selectOption" value="10" data-valor="0.12" data-codigo="CLP" data-descripcion="Pesos Chilenos">CLP Pesos
-                                Chilenos</a></li>
-                        <li class="tit-menu-idioma-item"><a href="#selectOption" class="selectOption" value="12" data-valor="112.8" data-codigo="GBP" data-descripcion="Libras Esterlinas">GBP Libras
-                                Esterlinas</a></li>
+                        <?php else : ?>
+                            <li class="tit-menu-idioma-item active" onClick="convertirPeso()" style="cursor:pointer">ARS Pesos Argentinos</li>
+
+                            <li class="tit-menu-idioma-item"><a class="selectOption" onClick="convertirDolar()" style="cursor:pointer">USD Dólares Americanos</a></li>
+
+                            <li class="tit-menu-idioma-item"><a onClick="convertirEuro()" class="selectOption" style="cursor:pointer">EUR Euros</a>
+                            </li>
+                            <li class="tit-menu-idioma-item"><a onClick="convertirReal()" class="selectOption" style="cursor:pointer">BRL Reales</a></li>
+                            <!-- <li class="tit-menu-idioma-item"><a href="#selectOption" class="selectOption" value="10" data-valor="0.12" data-codigo="CLP" data-descripcion="Pesos Chilenos">CLP Pesos
+                                Chilenos</a></li>  -->
+                        <?php endif ?>
                     </ul>
                 </li>
             </ul>

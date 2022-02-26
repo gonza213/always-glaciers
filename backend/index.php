@@ -17,6 +17,7 @@ require_once "controllers/buscador.controller.php";
 require_once "controllers/turnos.controller.php";
 require_once "controllers/transferencia.controllers.php";
 require_once "controllers/mercado_pago.controller.php";
+require_once "controllers/divisas.controller.php";
 
 require_once "models/subcategorias.models.php";
 require_once "models/excursiones.models.php";
@@ -34,6 +35,8 @@ require_once "models/buscador.model.php";
 require_once "models/turnos.models.php";
 require_once "models/transferencia.models.php";
 require_once "models/mercado_pago.models.php";
+require_once "models/divisas.model.php";
+
 
 
 

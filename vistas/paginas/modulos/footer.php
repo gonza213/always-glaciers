@@ -165,34 +165,7 @@
                      </script>
                      <div class="menu">
                          <?php include "translate.php" ?>
-                         <ul>
-
-
-                             <li id="monedaSelect">
-                                 <a class="selected">
-                                     ARS Pesos Argentinos</a>
-                                 </a>
-                                 <ul class="selectOptions">
-                                     <li><a href="#selectOption" class="selectOption" value="6" data-valor="1"
-                                             data-codigo="ARS" data-descripcion="Pesos Argentinos">ARS Pesos
-                                             Argentinos</a></li>
-                                     <li><a href="#selectOption" class="selectOption" value="7" data-valor="83"
-                                             data-codigo="USD" data-descripcion="Dólares Americanos">USD Dólares
-                                             Americanos</a></li>
-                                     <li><a href="#selectOption" class="selectOption" value="8" data-valor="101.5"
-                                             data-codigo="EUR" data-descripcion="Euros">EUR Euros</a></li>
-                                     <li><a href="#selectOption" class="selectOption" value="9" data-valor="16"
-                                             data-codigo="BRL" data-descripcion="Reales">BRL Reales</a></li>
-                                     <li><a href="#selectOption" class="selectOption" value="10" data-valor="0.12"
-                                             data-codigo="CLP" data-descripcion="Pesos Chilenos">CLP Pesos
-                                             Chilenos</a></li>
-                                     <li><a href="#selectOption" class="selectOption" value="12" data-valor="112.8"
-                                             data-codigo="GBP" data-descripcion="Libras Esterlinas">GBP Libras
-                                             Esterlinas</a></li>
-                                 </ul>
-                             </li>
-
-                         </ul>
+                         
                      </div>
                  </section>
                  <?php endforeach ?>

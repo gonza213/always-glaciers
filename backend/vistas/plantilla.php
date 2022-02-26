@@ -182,6 +182,12 @@ session_start();
                 } else if ($_GET["pagina"] == "turnos") {
 
                     include "paginas/turnos.php";
+                } else if ($_GET["pagina"] == "dias-reservados") {
+
+                    include "paginas/dias_reservados.php";
+                } else if ($_GET["pagina"] == "divisas") {
+
+                    include "paginas/divisas.php";
                 } else if ($_GET["pagina"] == "salir") {
 
                     include "paginas/salir.php";

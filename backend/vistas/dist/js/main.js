@@ -1094,6 +1094,29 @@ $(".btnBorrarTurno").click(function(){
 });
 
 
+$(".btnBorrarDia").click(function(){
+
+    var idBorrarDia = $(this).attr("idBorrarDia");
+
+    Swal.fire({
+        title: '¿Estás seguro de borrar el día?',
+        text: '¡Si no lo está puede cancelar la acción!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: '¡Si, borrar el día de reserva!'
+    }).then((result)=>{
+
+        if(result.value){
+
+            window.location = "index.php?pagina=dias-reservados&idBorrarDia="+idBorrarDia;
+        }
+    })
+});
+
+
 
 
 

@@ -68,6 +68,19 @@ if (isset($_GET["status"])) {
     echo '<script> document.cookie = "Categoria_Carrito=; expires=Thu, 01 Jan 1970 00:00:00 UTC;"; </script>';
 }
 
+$divisas = ControladorDivisas::ctrMostrarDivisas();
+
+// echo '<pre>'; print_r($divisas[0][1]); echo '</pre>';
+
+$moneda_usd = $divisas[0][1];
+$moneda_eur = $divisas[0][2];
+$moneda_brl = $divisas[0][3];
+
+if(!$_GET){
+
+    header("Location: index");
+}
+
 
 ?>
 
@@ -408,7 +421,7 @@ if (isset($_GET["status"])) {
 
 <body class="blog-width-sidebar">
 
-
+<input type="hidden" id="usd" value="<?php echo $moneda_usd ?>">
     <?php foreach ($otros as $key => $value) : ?>
         <input type="hidden" id="descTra" value="<?php echo $value["descuento"] ?>">
         <input type="hidden" id="cbuTra" value="<?php echo $value["cbu"] ?>">
@@ -612,7 +625,29 @@ if (isset($_GET["status"])) {
             );
         }
     </script>
+
+    <script>
+        $('#buscador2').keyup(function() {
+            var tituloItem = $('.tituloItem');
+            console.log(tituloItem);
+            var buscando = $(this).val();
+            var itemBody = '';
+            for (var i = 0; i < tituloItem.length; i++) {
+                itemBody = $(tituloItem[i]).html().toLowerCase();
+
+                for (var x = 0; x < itemBody.length; x++) {
+                    if (buscando.length == 0 || itemBody.indexOf(buscando) > -1) {
+                        $(tituloItem[i]).parents('.itemBody').show();
+                    } else {
+                        $(tituloItem[i]).parents('.itemBody').hide();
+
+                    }
+                }
+            }
+        });
+    </script>
  
+
 
 </body>
 

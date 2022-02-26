@@ -361,6 +361,7 @@ $(".blog-width-sidebar").hover(function () {
   if(totalCarrito){
 
     $('#totalCarrito').html(Intl.NumberFormat("de-DE").format(totalCarrito))
+    $('#totalCarritoUsd').html(Intl.NumberFormat("de-DE").format(parseInt(totalCarrito/usd)))
   }
 
 });
