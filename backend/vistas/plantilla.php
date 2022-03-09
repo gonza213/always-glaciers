@@ -55,7 +55,7 @@ session_start();
     <!-- Theme style -->
     <link rel="stylesheet" href="vistas/dist/css/adminlte.min.css">
 
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
     <!-- AdminLTE App -->
     <script src="vistas/dist/js/adminlte.min.js"></script>
 

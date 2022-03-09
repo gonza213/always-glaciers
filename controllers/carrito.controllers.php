@@ -12,4 +12,15 @@ class ControllerCarrito{
 
         return $respuesta;
     }
+
+    
+    static public function ctrEnviarCarritoRenta($datos){
+
+        
+        $tabla = "pagos_tarjetas_rentas";
+
+        $respuesta = ModelCarrito::mdlEnviarCarritoRenta($tabla, $datos);
+
+        return $respuesta;
+    }
 }

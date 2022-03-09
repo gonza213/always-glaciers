@@ -52,7 +52,7 @@ if(category != 'Renta'){
 
 // MERCADO PAGO
 // Agrega credenciales de SDK
-const mp = new MercadoPago("APP_USR-fda6d4b7-3692-41b1-aeb2-6c07a91c5669", {
+const mp = new MercadoPago("TEST-5a76b1f2-6036-4726-89a5-979890d1e144", {
   locale: "es-AR",
 });
 

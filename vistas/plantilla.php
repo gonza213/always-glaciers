@@ -45,6 +45,19 @@ if (isset($_COOKIE["Detalles"])) {
         );
 
         $respuesta = ControllerCarrito::ctrEnviarCarrito($datos);
+    } else if (isset($_COOKIE["Renta_Paypal"])) {
+
+
+        $datos = array(
+            "renta" => $_COOKIE['Renta'],
+            "total" => $precio,
+            "pasajeros" => $_COOKIE['Pasajeros'],
+            "metodo_pago" => $_COOKIE['Metodo'],
+            "operacion" => $operacion,
+            "numero_transaccion" => $detalles->{'id'}
+        );
+
+        $respuesta = ControllerCarrito::ctrEnviarCarritoRenta($datos);
     }
 
 
@@ -76,7 +89,7 @@ $moneda_usd = $divisas[0][1];
 $moneda_eur = $divisas[0][2];
 $moneda_brl = $divisas[0][3];
 
-if(!$_GET){
+if (!$_GET) {
 
     header("Location: index");
 }
@@ -421,7 +434,7 @@ if(!$_GET){
 
 <body class="blog-width-sidebar">
 
-<input type="hidden" id="usd" value="<?php echo $moneda_usd ?>">
+    <input type="hidden" id="usd" value="<?php echo $moneda_usd ?>">
     <?php foreach ($otros as $key => $value) : ?>
         <input type="hidden" id="descTra" value="<?php echo $value["descuento"] ?>">
         <input type="hidden" id="cbuTra" value="<?php echo $value["cbu"] ?>">
@@ -646,7 +659,7 @@ if(!$_GET){
             }
         });
     </script>
- 
+
 
 
 </body>

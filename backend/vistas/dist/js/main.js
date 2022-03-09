@@ -1116,6 +1116,51 @@ $(".btnBorrarDia").click(function(){
     })
 });
 
+$(".btnBorrarMercadoRenta").click(function(){
+
+    var idMercadoRenta = $(this).attr("idMercadoRenta");
+
+    Swal.fire({
+        title: '¿Estás seguro de borrar la reserva?',
+        text: '¡Si no lo está puede cancelar la acción!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: '¡Si, borrar la reserva!'
+    }).then((result)=>{
+
+        if(result.value){
+
+            window.location = "index.php?pagina=mercado-pago&idMercadoRenta="+idMercadoRenta;
+        }
+    })
+});
+
+$(".btnBorrarMercadoRentaP").click(function(){
+
+    var idMercadoRenta = $(this).attr("idMercadoRenta");
+
+    Swal.fire({
+        title: '¿Estás seguro de borrar la reserva?',
+        text: '¡Si no lo está puede cancelar la acción!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: '¡Si, borrar la reserva!'
+    }).then((result)=>{
+
+        if(result.value){
+
+            window.location = "index.php?pagina=paypal&idMercadoRenta="+idMercadoRenta;
+        }
+    })
+});
+
+
 
 
 

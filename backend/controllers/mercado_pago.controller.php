@@ -21,6 +21,15 @@ class ControllerMercado{
         return $respuesta;
     }
 
+    static public function ctrMostrarMercadoRenta(){
+
+        $tabla = "pagos_tarjetas_rentas";
+
+        $respuesta = ModelMercado::mdlMostrarMercado($tabla);
+
+        return $respuesta;
+    }
+
     
        // BORRAR 
        static public function ctrBorrarMercado()
@@ -182,4 +191,73 @@ class ControllerMercado{
      
              return $resultado;
          }
+
+         static public function ctrBorrarMercadoRenta()
+         {
+     
+             if (isset($_GET["idMercadoRenta"])) {
+     
+                 $tabla = "pagos_tarjetas_rentas";
+                 $datos = $_GET["idMercadoRenta"];
+     
+                 $respuesta = ModelMercado::mdlBorrarMercado($tabla, $datos);
+     
+                 if ($respuesta == "ok") {
+     
+                     echo "<script>
+             
+                   Swal.fire({
+                     icon: 'success',
+                     title: '¡La reserva ha sido eliminada!',
+                     showConfirmButton: true,
+                     confirmButtonText: 'Cerrar',
+                     closeOnConfirm: false
+                 }).then((result)=>{
+             
+                     if(result.value){
+             
+                         window.location = 'mercado-pago';
+                     }
+                 })
+                           
+                   
+                        </script>";
+                 }
+             }
+         }
+
+         static public function ctrBorrarMercadoRentaP()
+         {
+     
+             if (isset($_GET["idMercadoRenta"])) {
+     
+                 $tabla = "pagos_tarjetas_rentas";
+                 $datos = $_GET["idMercadoRenta"];
+     
+                 $respuesta = ModelMercado::mdlBorrarMercado($tabla, $datos);
+     
+                 if ($respuesta == "ok") {
+     
+                     echo "<script>
+             
+                   Swal.fire({
+                     icon: 'success',
+                     title: '¡La reserva ha sido eliminada!',
+                     showConfirmButton: true,
+                     confirmButtonText: 'Cerrar',
+                     closeOnConfirm: false
+                 }).then((result)=>{
+             
+                     if(result.value){
+             
+                         window.location = 'paypal';
+                     }
+                 })
+                           
+                   
+                        </script>";
+                 }
+             }
+         }
+  
 }

@@ -2,6 +2,7 @@
 
 $mercado = ControllerMercado::ctrMostrarMercado();
 $mercado_carrito = ControllerMercado::ctrMostrarMercadoCarrito();
+$mercado_renta = ControllerMercado::ctrMostrarMercadoRenta();
 
 ?>
 
@@ -227,12 +228,144 @@ $mercado_carrito = ControllerMercado::ctrMostrarMercadoCarrito();
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Lista de Reservas de Renta Car</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="card card-danger card-outline">
+
+                                <div class="card-body">
+                                    <div id="example1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table id="exampleTraslado" class="table table-borderless table-hover table-responsive dataTable">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th>
+                                                                #</th>
+                                                            <th>
+                                                                Operación</th>
+                                                            <th>
+                                                                Renta</th>
+                                                            <th>
+                                                                Pasajero Ppal</th>
+                                                            <th>
+                                                                N° Transacción</th>
+                                                            <th>
+                                                                Precio Total</th>
+                                                            <th>
+                                                                Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php foreach ($mercado_renta as $key => $value) : ?>
+                                                            <?php if ($value['metodo_pago'] == "Mercado Pago") : ?>
+                                                                <tr role="row" class="odd">
+                                                                    <td><?php echo $key + 1; ?></td>
+                                                                    <td>N° <?php echo $value["operacion"] ?></td>
+                                                                    <td>
+                                                                        <?php
+                                                                        $detalles = json_decode($value["renta"]);
+
+
+
+                                                                        echo '<p><b>Vehiculo:</b> ' . $detalles->renta . '</p>';
+                                                                        echo '<p><b>Entrada:</b> ' . $detalles->entrada . '</p>';
+                                                                        echo '<p><b>Salida:</b> ' . $detalles->salida . '</p>';
+                                                                        echo '<p><b>Cantidad de dias:</b> ' . $detalles->dias . '</p>';
+                                                                        echo '<p><b>Opcionales:</b> ';
+                                                                        $opcionales = $detalles->opcionales;
+
+                                                                        foreach ($opcionales as $key => $value) {
+
+                                                                            echo  $opcionales;
+                                                                        }
+
+                                                                        echo '</p>';
+
+
+                                                                        ?>
+                                                                    </td>
+                                                                <?php endif; ?>
+                                                            <?php endforeach; ?>
+                                                            <?php foreach ($mercado_renta as $key => $value) : ?>
+                                                                <?php if ($value['metodo_pago'] == "Mercado Pago") : ?>
+
+                                                                    <td>
+                                                                        <?php
+                                                                        $detalles = json_decode($value["pasajeros"]);
+
+                                                                        echo '<b>Nombre:</b> ';
+                                                                        echo $detalles->nombre;
+                                                                        echo ' ';
+                                                                        echo $detalles->apellido;
+                                                                        echo '<br> <b>Tel:</b> ';
+                                                                        echo $detalles->tel;
+                                                                        echo '<br> <b>DNI:</b> ';
+                                                                        echo $detalles->dni;
+                                                                        echo '<br> <b>Domicilio:</b> ';
+                                                                        echo $detalles->dol;
+                                                                        echo '<br> <b>N° Registro de conducir:</b> ';
+                                                                        echo $detalles->registro;
+                                                                        echo '<br> <b>Expiración del registro:</b> ';
+                                                                        echo $detalles->exp;
+                                                                        echo '<br> <b>Retiro del vehiculo:</b> ';
+                                                                        echo $detalles->retiro;
+                                                                        echo '<br> <b>Devolución del vehiculo:</b> ';
+                                                                        echo $detalles->devolucion;
+
+
+                                                                        ?>
+                                                                    </td>
+                                                                    <td><?php echo $value["numero_transaccion"] ?></td>
+                                                                    <td>$ <?php echo $value["total"] ?> ARS</td>
+                                                                    <td>
+                                                                        <!-- <a class="btn btn-info text-white btnVerMercadoCarrito" idMercadoCarrito="<?php echo $value["id"] ?>" data-toggle="modal" data-target="#exampleModalCarrito"><i class="fa fa-eye"></i></a> -->
+                                                                        <a class="btn btn-danger text-white btnBorrarMercadoRentaP" idMercadoRenta="<?php echo $value["id"] ?>"><i class="fa fa-trash"></i></a>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php endif; ?>
+                                                        <?php endforeach; ?>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div><!-- /.card -->
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
 </div>
 
 <?php
 
 $borrarMercado = new ControllerMercado();
 $borrarMercado->ctrBorrarPaypal();
+
+?>
+
+<?php
+
+$borrarMercadoRenta = new ControllerMercado();
+$borrarMercadoRenta->ctrBorrarMercadoRentaP();
 
 ?>
 <?php

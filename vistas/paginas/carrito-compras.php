@@ -156,7 +156,7 @@ if (isset($_COOKIE['Categoria_Carrito'])) {
                     $installments = $_REQUEST["installments"];
                     $issuer_id = $_REQUEST["issuer_id"];
 
-                    MercadoPago\SDK::setAccessToken("APP_USR-4951476334635977-101012-f572cbdb78968afb6b8990384f770051__LA_LD__-44572108");
+                    MercadoPago\SDK::setAccessToken("TEST-4665705786102670-022318-b1da8c0cc239ee980d8e1da8508e55d9-1078889670");
                     //...
                     $payment = new MercadoPago\Payment();
                     $payment->transaction_amount = $_COOKIE["TotalCarrito"];
