@@ -1031,7 +1031,11 @@ function almanaque(){
 
 
   if(!entrada || !salida){
-    alert('Complete todos los datos')
+    Swal.fire(
+      "Complete todos los campos requeridos (*)!",
+      'Haga click en "OK" para continuar!',
+      "warning"
+    );
   }else if(entrada && salida){
     var difM = salida - entrada; // diferencia en milisegundos
     var difD = difM / (1000 * 60 * 60 * 24); // diferencia en dias

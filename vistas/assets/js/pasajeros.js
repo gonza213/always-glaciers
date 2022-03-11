@@ -1367,7 +1367,7 @@ $('.itinerario').hover(function() {
 
     day.setDate(day.getDate() + 1);
 
-    console.log(day);
+  
 
     if($('#btnArray')){
       $(`.btn-${i}`).remove()
